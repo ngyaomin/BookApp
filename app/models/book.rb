@@ -1,5 +1,14 @@
 class Book < ActiveRecord::Base
-  searchkick
+  searchkick word_start: [ :title, :author, :summary ],
+            highlight:  [ :title, :author, :summary ]
+
+ def search_data
+   { title: title,
+     author: author,
+     summary: summary
+   }
+ end
+
   belongs_to :user
   has_many :reviews
 end
