@@ -3,28 +3,14 @@
     <div class="row">
       <div class="col-md-4">
 
-        <div class="table-responsive">
-          <table class="table">
-            <tbody>
-              <tr>
-                <td><strong>Title:</strong></td>
-                <td><%= @book.title %></td>
-              </tr>
-              <tr>
-                <td><strong>Summary:</strong></td>
-                <td><%= @book.summary %></td>
-              </tr>
-              <tr>
-                <td><strong>Author:</strong></td>
-                <td><%= @book.author %></td>
-              </tr>
-            </tbody>
-          </table>
+
           <%= link_to "write a review", new_book_review_path(@book) %>
         </div>
       </div>
       <div class="col-md-7 col-md-offset-1">
         <h1 class="review_title"><%= @book.title %></h1>
+        <h5><%= @book.author %></h5>
+
         <p><%= @book.summary %></p>
         <% if @reviews.blank? %>
          <h3>No reviews just yet, would you like to add the first!</h3>
@@ -43,3 +29,13 @@
 
 <%= link_to 'Edit', edit_book_path(@book) %> |
 <%= link_to 'Back', books_path %>
+
+<script>
+    $('.star-rating').raty({
+      path: '/assets/',
+      readOnly: true,
+      score: function() {
+            return $(this).attr('data-score');
+    }
+  });
+</script>
