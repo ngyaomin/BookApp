@@ -2,7 +2,7 @@ class Book < ActiveRecord::Base
   searchkick word_start: [ :title, :author, :summary ],
             highlight:  [ :title, :author, :summary ]
 
- def search_data
+ def search
    { title: title,
      author: author,
      summary: summary
