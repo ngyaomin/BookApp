@@ -1,8 +1,10 @@
 <div class="row">
   <% @books.each do |book| %>
-    <div class="col-sm-6 col-md-3">
-        <%= link_to 'results', book  %>
-    </div>
+
+<div class="results">
+  <%= link_to book.title, book  %><br><br>
+</div>
+
   <% end %>
 </div>
 
