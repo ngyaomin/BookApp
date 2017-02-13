@@ -17,7 +17,7 @@
 
       <h3><%= book.title %></h3>
       <h5> by <%= book.author %></h5>
-        <%= book.summary %> <br>
+        <%= book.summary.truncate_words(56) %> <br>
 
         <%= link_to 'Show', book %>
         <%= link_to 'Edit', edit_book_path(book) %>
