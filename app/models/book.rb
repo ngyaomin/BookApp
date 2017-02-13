@@ -5,7 +5,7 @@ class Book < ActiveRecord::Base
  def search
    { title: title,
      author: author,
-     summary: summary
+     summary: summary,
    }
  end
 

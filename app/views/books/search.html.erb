@@ -2,7 +2,7 @@
   <% @books.each do |book| %>
 
 <div class="results">
-  <%= link_to book.title, book  %><br><br>
+  <%= link_to book.title+" by "+book.author, book  %><br><br>
 </div>
 
   <% end %>
