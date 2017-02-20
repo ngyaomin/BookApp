@@ -9,7 +9,7 @@ class Book < ActiveRecord::Base
    }
  end
 
- mount_uploader :product_image, ProductImageUploader
+  mount_uploader :product_image, ProductImageUploader
 
   belongs_to :user
   has_many :reviews
