@@ -7,7 +7,7 @@
       </div>
       <div class="col-md-7 col-md-offset-1">
         <h1 class="review_title"><%= @book.title %></h1>
-        <%= image_tag @book.product_image_url, size: "100x100" %>
+        <%= image_tag @book.product_image.thumb.url %>
         <h5><%= @book.author %></h5>
 
         <p><%= @book.summary %></p>

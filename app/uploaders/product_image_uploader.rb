@@ -3,6 +3,14 @@ class ProductImageUploader < CarrierWave::Uploader::Base
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
+  include CarrierWave::MiniMagick
+
+  process resize_to_fit: [800, 800]
+
+  version :thumb do
+   	process resize_to_fill: [200,200]
+  end
+
 
   # Choose what kind of storage to use for this uploader:
   storage :file
@@ -54,8 +62,8 @@ class ProductImageUploader < CarrierWave::Uploader::Base
  	 /image\//
   end
 
-  def content_type_backlist
-   ['application/text', 'application/zip']
-  end
+    def content_type_backlist
+     ['application/text', 'application/zip']
+    end
 
 end
