@@ -16,6 +16,8 @@
     <% @books.each do |book| %>
 
       <h3><%= book.title %></h3>
+      <%= image_tag book.product_image_url, size: "50x50" %>
+
       <h5> by <%= book.author %></h5>
         <%= book.summary.truncate_words(56) %> <br>
 
